@@ -120,4 +120,4 @@ for now I have none and do not require one
 
 #### UML
 
-![RESTy UML]()
+![Context Setting API UML]()
