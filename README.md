@@ -68,3 +68,56 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# LAB - Class 31
+
+## Author: Kao Saelor
+
+## Project: Context API
+
+### Problem Domain  
+
+In Phase 1, we’re going to perform some refactoring of a Todo application built by another team. This application mixes application state and user settings at the top level and passes things around. It was a good proof of concept, but we need to make this production ready.
+
+- Create a Detailed UML.
+- Properly modularize the application into separate components, note the proposed file structure below.
+- Implement the Context API to make some basic application settings available to components.
+  - Show three items by default.
+  - Hide completed items by default.
+  - Add the sort word ‘difficulty’ by default.
+
+- Style the application using the Mantine Component API{target:_blank}
+
+### Links and Resources
+
+- [GitHub Actions ci/cd]()
+- [front-end application]()
+
+### Collaborators
+
+### Setup
+
+#### `.env` requirements (where applicable)
+
+for now I have none and do not require one
+
+
+#### How to initialize/run your application (where applicable)
+
+- e.g. `npm start`
+
+#### How to use your library (where applicable)
+
+#### Features / Routes
+
+- Feature One: Details of feature
+- GET : `/hello` - specific route to hit
+
+#### Tests
+
+- npm test
+
+#### UML
+
+![RESTy UML]()
