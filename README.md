@@ -91,7 +91,7 @@ In Phase 1, we’re going to perform some refactoring of a Todo application buil
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd]()
+- [GitHub Actions ci/cd](https://github.com/CodingKao/todo-app/tree/context-settings)
 - [front-end application]()
 
 ### Collaborators
@@ -149,8 +149,8 @@ In Phase 2, we’re going to extend the functionality of our application by allo
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd](https://github.com/ReeceRenninger/todo-app/actions) 
-- [front-end application](http://xyz.com) (when applicable)
+- [GitHub Actions ci/cd]() 
+- [front-end application]()
 
 ### Collaborators
 
@@ -197,8 +197,8 @@ Concise Description of why this app exists
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd](https://github.com/ReeceRenninger/todo-app/actions) 
-- [front-end application](http://xyz.com) (when applicable)
+- [GitHub Actions ci/cd]() 
+- [front-end application]()
 
 ### Collaborators
 
@@ -231,8 +231,6 @@ for now I have none and do not require one
 Link to an image of the UML for your application and response to events
 
 
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
 # LAB - Class 34
 
 ## Project: Project Name Here
@@ -245,8 +243,8 @@ Concise Description of why this app exists
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd](https://github.com/ReeceRenninger/todo-app/actions) 
-- [front-end application](http://xyz.com) (when applicable)
+- [GitHub Actions ci/cd]() 
+- [front-end application]()
 
 ### Collaborators
 
