@@ -1,51 +1,48 @@
+import { SettingsContext } from '../Context/Settings';
 import { useContext, useState } from 'react';
-import { SettingsContext } from '../../Context/Settings';
-import { Pagination } from '@mantine/core';
 
-function List({ list, toggleComplete }) {
-  const {
-    displayCount,
-    showComplete,
-    sort
-  } = useContext(SettingsContext);
-  const [activePage, setPage] = useState(1);
+import { Card, Button, Pagination, Text} from '@mantine/core';
 
-  // proof of life, context is accessible
-  // console.log(displayCount, showComplete, sort)
+function List({list, toggleComplete}) {
 
-  // our renderable list will conditionally show or hide completed tasks
-  const renderableList = showComplete ? list : list.filter(item => !item.complete);
-  // console.log('our renderable list', renderableList)
+  const { pageItems, showCompleted } = useContext(SettingsContext); 
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // determine how many pages will be in our pagination component
-  const pageCount = Math.ceil(renderableList.length / displayCount);
-
-  // where to start rendering display data
-  const listStart = displayCount * (activePage - 1);
-  // where to end (using slice)
-  const listEnd = listStart + displayCount;
-
-  // list that is displayed for each pagination page
-  const displayList = renderableList.slice(listStart, listEnd);
+  const displayItems = showCompleted 
+  ? list
+  : list.filter((items) => !items.complete);
+  
+  const pages = Math.ceil(displayItems.length / pageItems);
+  const firstItem = (currentPage - 1) * pageItems;
+  const lastItem = currentPage * pageItems;
+  const finalItems = displayItems.slice(firstItem, lastItem);
 
   return (
     <>
-      {displayList.map(item => (
+    
+      <Card shadow="sm" padding="md" margin="md">
+        <Card.Section>
+
+      {finalItems.map(item => (
         <div key={item.id}>
-          <p>{item.text}</p>
-          <p><small>Assigned to: {item.assignee}</small></p>
-          <p><small>Difficulty: {item.difficulty}</small></p>
-          <div onClick={() => toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
+          <Text>{item.text}</Text>
+          <Text><small>Assigned to: {item.assignee}</small></Text>
+          <Text><small>Difficulty: {item.difficulty}</small></Text>
+          <Button onClick={() => toggleComplete(item.id)}>Complete: {item.complete.toString()}</Button>
           <hr />
         </div>
-        
       ))}
+      </Card.Section>
 
-      <Pagination value={activePage} onChange={setPage} total={pageCount} />
+      <Pagination
+        total={pages}
+        value={currentPage}
+        onChange={(value)=> setCurrentPage(value)}
+      />
+      </Card>
 
     </>
   )
-
 }
 
 export default List;
