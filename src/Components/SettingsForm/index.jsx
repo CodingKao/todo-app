@@ -3,6 +3,8 @@ import { SettingsContext } from "../Context/Settings";
 import { createStyles, Button, Checkbox, TextInput, Text } from "@mantine/core";
 
 import { IconSettings } from '@tabler/icons-react';
+import { NumberInput } from '@mantine/core';
+
 
 const useStyles = createStyles((theme) => ({
   h1: {
@@ -26,7 +28,15 @@ const useStyles = createStyles((theme) => ({
 
 const SettingsForm = (event) => {
 
-  const { pageItems, setPageItems, showCompleted, setShowCompleted, sort, setSort, saveLocalStorage } = useContext(SettingsContext);
+  const {
+    pageItems,
+    setPageItems,
+    showCompleted,
+    setShowCompleted,
+    sort,
+    setSort,
+    saveLocalStorage } = useContext(SettingsContext);
+
   const [showUpdate, setShowUpdate] = useState(false);
 
 
@@ -35,11 +45,11 @@ const SettingsForm = (event) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowUpdate(true);
+    setShowUpdate(true); 
     saveLocalStorage();
 
   };
- 
+
   return (
     <>
       <h1 className={classes.h1}><IconSettings /> Manage Settings </h1>
@@ -48,23 +58,22 @@ const SettingsForm = (event) => {
           <h3>Update Settings</h3>
           <form onSubmit={handleSubmit} className={classes.form} >
 
-            <Checkbox
+            <Switch
               label="Show Completed?"
               checked={showCompleted}
               onChange={(event) => setShowCompleted(event.target.checked)}
             />
-            <input
-              type="number"
+            <NumberInput
               name="pageItems"
-              label="Items per page"
+              label="Items Per Page"
               placeholder={pageItems}
               value={pageItems}
-              onChange={(event) => setPageItems(event.target.value)}
+              onChange={setPageItems}
             />
 
             <TextInput
-              label="Sort by"
-              placeholder="difficulty"
+              label="Sort Keyword"
+              placeholder={sort}
               value={sort}
               onChange={(event) => setSort(event.target.value)}
             />

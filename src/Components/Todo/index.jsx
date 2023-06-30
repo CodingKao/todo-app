@@ -6,7 +6,7 @@ import List from '../List';
 
 
 import { Grid, TextInput, Button, Text, createStyles, Slider } from '@mantine/core';
-
+import Auth from '../Auth';
 
 const styles = createStyles((theme) => ({
   todo: {
@@ -60,11 +60,8 @@ const Todo = () => {
     let incompleteCount = list.filter(item => !item.complete).length;
     setIncomplete(incompleteCount);
     document.title = `To Do List: ${incomplete}`;
-    // linter will want 'incomplete' added to dependency array unnecessarily. 
-    // disable code used to avoid linter warning 
-    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [list]);
-//!! Discovered grids can hold multiple grid columns around specific components
+
   return (
     <>
       <h1 data-testid="header-h1" className={classes.todo}>To Do List: {incomplete} items pending</h1>
@@ -108,7 +105,7 @@ const Todo = () => {
         </Grid.Col>
         <Grid.Col xs={12} sm={8}>
           <List
-            deleteItem={deleteItem} //trying to remove the error and place function here for now
+            deleteItem={deleteItem} 
             list={list}
             toggleComplete={toggleComplete} />
         </Grid.Col>
