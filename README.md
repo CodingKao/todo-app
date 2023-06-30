@@ -160,18 +160,19 @@ for now I have none and do not require one
 
 #### UML
 
-Link to an image of the UML for your application and response to events
+
 
 
 # LAB - Class 34
 
-## Project: Project Name Here
-
+## Project: API Integration
 
 
 ### Problem Domain  
 
-Concise Description of why this app exists
+To Do List Manager Phase 4: Integrating with a live API.
+
+In this final phase, we’ll be requiring that users be logged in through a live authentication server, in order to see the to do items. Additionally, based on their user type, they will be allowed (or denied) to perform actions such as editing or deleting them. All To Do items will be stored in a database, accessed through a deployed API.
 
 ### Links and Resources
 
@@ -206,4 +207,3 @@ for now I have none and do not require one
 
 #### UML
 
-Link to an image of the UML for your application and response to events
